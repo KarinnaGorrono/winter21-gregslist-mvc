@@ -1,4 +1,5 @@
 import { Car } from "./Models/Car.js"
+import { House } from "../Model/House.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
@@ -10,7 +11,10 @@ class AppState extends EventEmitter {
     new Car({ make: 'Elven', model: 'Sleigh', year: 1700, price: 900000, description: 'It only works once a year, and has 8 horsepower', color: '#f44545', imgUrl: 'https://cdn.shopify.com/s/files/1/1319/9267/products/metal-sleigh_1_1024x1024.jpg' })
   ]
   /** @type {import('./Models/House').House[]} */
-  houses = []
+  houses = [
+    new House({ model: 'tiny home', year: '2018', price: '20000', description: 'tiny', color: 'blue', imgUrl: "https://inhabitat.com/wp-content/blogs.dir/1/files/2020/04/oasis-tiny-home4-889x592.jpg" }),
+
+  ]
 }
 
 export const ProxyState = new Proxy(new AppState(), {
